@@ -1,0 +1,16 @@
+﻿@model IEnumerable<TextEditor.Models.Doc>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <a class="btn btn-info" asp-action="Create">Create new</a>
+</div>
+<hr />
+
+@foreach (var item in Model)
+{
+    <div class="mb-2">
+        <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.Id">@item.Title</a>
+    </div>
+}
